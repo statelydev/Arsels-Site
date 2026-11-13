@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ARSEL — Video &amp; Photo Production</title>
+  <meta name="description" content="ARSEL is a video and photo production studio. Each letter is a category. Hover to preview, click to open the gallery.">
+  <meta name="theme-color" content="#BF2F3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23BF2F3E'/%3E%3Ctext x='32' y='48' text-anchor='middle' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='46' fill='%23EAF1F4'%3EA%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,900&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ====================================================================
+       EDIT YOUR WORK HERE
+
+       Each LETTER of ARSEL is a category. Hovering a letter previews it,
+       clicking it opens that category's gallery.
+
+         char     : the letter
+         name     : category name, shown as outline text above the letter
+         cover    : optional — the piece shown inside the letter on hover.
+                    Leave it out and the first work is used instead.
+         works    : everything in that category's gallery
+           type   : "video" or "photo"
+           src    : a local file ("media/a1.mp4") or a URL
+           poster : optional still shown before a video loads
+           title  : project name
+           client : client or publication
+           year   : year
+
+       The placeholders below just make the page work before your own
+       footage goes in. Drop your files in media/ and use plain paths
+       like "media/a1.mp4".
+       ==================================================================== -->
+  <script>
+    // Placeholder media only — delete these two helpers once your own files are in.
+    const CLIP = [
+      "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+      "https://media.w3.org/2010/05/sintel/trailer.mp4",
+      "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_1MB.mp4",
+      "https://media.w3.org/2010/05/video/movie_300.mp4",
+      "https://www.w3schools.com/html/mov_bbb.mp4"
+    ];
+    const SHOT = s => `https://picsum.photos/seed/arsel-${s}/1600/900`;
+
+    window.ARSEL = {
+      fps: 24,
+      categories: [
+        {
+          char: "A",
+          name: "Commercial",
+          works: [
+            { type: "video", src: CLIP[0], title: "Afterglow",    client: "Meridian",   year: "2025" },
+            { type: "video", src: CLIP[3], title: "First Light",  client: "Kestrel",    year: "2025" },
+            { type: "photo", src: SHOT("a1"), title: "Dry Season", client: "Meridian",  year: "2024" },
+            { type: "video", src: CLIP[4], title: "Open Road",    client: "Northbound", year: "2024" },
+            { type: "photo", src: SHOT("a2"), title: "Counter",    client: "Kestrel",   year: "2024" }
+          ]
+        },
+        {
+          char: "R",
+          name: "Music Video",
+          works: [
+            { type: "video", src: CLIP[1], title: "Redline",      client: "Sable",      year: "2025" },
+            { type: "photo", src: SHOT("r1"), title: "Static",     client: "Vantage",   year: "2025" },
+            { type: "video", src: CLIP[2], title: "Nightcall",    client: "Sable",      year: "2024" },
+            { type: "photo", src: SHOT("r2"), title: "Bloom",      client: "Halo Room", year: "2024" }
+          ]
+        },
+        {
+          char: "S",
+          name: "Editorial",
+          works: [
+            { type: "photo", src: SHOT("s1"), title: "Signal",     client: "Frame Mag", year: "2025" },
+            { type: "photo", src: SHOT("s2"), title: "Grain",      client: "Frame Mag", year: "2025" },
+            { type: "video", src: CLIP[3], title: "Cold Open",    client: "Atlas",      year: "2025" },
+            { type: "photo", src: SHOT("s3"), title: "Long Lens",  client: "Atlas",     year: "2024" },
+            { type: "photo", src: SHOT("s4"), title: "Off Season", client: "Frame Mag", year: "2024" },
+            { type: "video", src: CLIP[0], title: "Held",         client: "Atlas",      year: "2023" }
+          ]
+        },
+        {
+          char: "E",
+          name: "Portrait",
+          works: [
+            { type: "photo", src: SHOT("e1"), title: "Ember",      client: "Private",   year: "2025" },
+            { type: "photo", src: SHOT("e2"), title: "Studio 04",  client: "Private",   year: "2025" },
+            { type: "video", src: CLIP[4], title: "Sitting",      client: "Halo Room",  year: "2024" },
+            { type: "photo", src: SHOT("e3"), title: "Daylight",   client: "Private",   year: "2024" }
+          ]
+        },
+        {
+          char: "L",
+          name: "Documentary",
+          works: [
+            { type: "video", src: CLIP[2], title: "Lowlight",     client: "Field Notes", year: "2025" },
+            { type: "video", src: CLIP[1], title: "The Crossing", client: "Field Notes", year: "2024" },
+            { type: "photo", src: SHOT("l1"), title: "Harbour",    client: "Field Notes", year: "2024" },
+            { type: "photo", src: SHOT("l2"), title: "Shift Work", client: "Independent", year: "2023" },
+            { type: "video", src: CLIP[3], title: "Last Run",     client: "Independent", year: "2023" }
+          ]
+        }
+      ]
+    };
+  </script>
+
+  <h1 class="sr-only">ARSEL — video and photo production</h1>
+
+  <!-- ===================== CORNER TEXT (edit freely) ===================== -->
+  <header class="corner tl" data-corner="studio">
+    <span class="label">Studio</span>
+    <span class="line">Arsel</span>
+    <span class="line">Video &amp; Photo Production</span>
+  </header>
+
+  <aside class="corner tr" data-corner="status">
+    <span class="label">Status</span>
+    <span class="line"><i class="rec" aria-hidden="true"></i><span data-txt>Standby</span></span>
+    <span class="line" data-tc>00:00:00:00</span>
+  </aside>
+
+  <aside class="corner bl" data-corner="work" aria-live="polite">
+    <span class="label">Selected Work</span>
+    <span class="line"><span data-txt>Hover to reveal</span></span>
+    <span class="line"><span data-txt>05 categories</span></span>
+  </aside>
+
+  <footer class="corner br" data-corner="contact">
+    <span class="label">Contact</span>
+    <a class="line" href="mailto:hello@arsel.studio">hello@arsel.studio</a>
+    <a class="line" href="https://instagram.com/" target="_blank" rel="noopener">@arsel.visuals &#8599;</a>
+  </footer>
+
+  <!-- ============================ THE WORD ============================ -->
+  <main class="hero" aria-label="ARSEL — categories">
+    <svg class="type" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet" role="group" aria-label="ARSEL">
+      <defs></defs>
+      <g class="labels"></g>
+      <g class="letters"></g>
+      <rect class="bar bar-select" x="0" y="0" width="1" height="45"></rect>
+      <rect class="bar bar-progress" x="0" y="0" width="1" height="45"></rect>
+      <g class="hits"></g>
+    </svg>
+    <div class="media-layer" aria-hidden="true"></div>
+  </main>
+
+  <!-- ============================= GALLERY ============================= -->
+  <section class="gallery" hidden role="dialog" aria-modal="true" aria-labelledby="gal-name">
+    <div class="gallery-bar">
+      <span class="gallery-crumb">Arsel <span aria-hidden="true">/</span> <b data-gal-crumb></b></span>
+      <button class="gallery-close" type="button">Close <span aria-hidden="true">&#10005;</span></button>
+    </div>
+    <div class="gallery-inner">
+      <header class="gallery-head">
+        <span class="label">Category</span>
+        <h2 class="gallery-name" id="gal-name"></h2>
+        <span class="gallery-count" data-gal-count></span>
+      </header>
+      <div class="gallery-grid" data-gal-grid></div>
+    </div>
+  </section>
+
+  <!-- ============================ LIGHTBOX ============================ -->
+  <div class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Work viewer">
+    <button class="lb-close" type="button" aria-label="Close viewer">&#10005;</button>
+    <button class="lb-nav lb-prev" type="button" aria-label="Previous work">&#8592;</button>
+    <button class="lb-nav lb-next" type="button" aria-label="Next work">&#8594;</button>
+    <figure class="lb-figure">
+      <div class="lb-stage" data-lb-stage></div>
+      <figcaption class="lb-cap">
+        <span class="lb-title" data-lb-title></span>
+        <span class="lb-meta" data-lb-meta></span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor-ring"><span>View</span></div>
+    <div class="cursor-dot"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
